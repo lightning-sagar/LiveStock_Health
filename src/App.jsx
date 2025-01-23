@@ -7,12 +7,12 @@ function App() {
   const handleClick = async (dir) => {
     setDirection(dir);
     try {
-      const res = await fetch("http://localhost:8000/", {
+      const res = await fetch("https://6871-2409-40c4-15-c450-d1b1-d5fb-8c3-32df.ngrok-free.app/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ direction: dir }), // Send the correct data structure
+        body: JSON.stringify({ direction: dir }),  
       });
 
       if (!res.ok) {
@@ -28,16 +28,18 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="buttons-container">
-        <button onClick={() => handleClick("up")}>Up</button>
-        <div className="horizontal-buttons">
-          <button onClick={() => handleClick("left")}>Left</button>
-          <button onClick={() => handleClick("down")}>Down</button>
-          <button onClick={() => handleClick("right")}>Right</button>
-        </div>
-      </div>
-      {direction && <p>Direction: {direction}</p>}
+  <div className="buttons-container">
+    <button onClick={() => handleClick("u")} className="btn">Up</button>
+    <div className="horizontal-buttons">
+      <button onClick={() => handleClick("l")} className="btn">Left</button>
+      <button onClick={() => handleClick("d")} className="btn">Down</button>
+      <button onClick={() => handleClick("r")} className="btn">Right</button>
     </div>
+  </div>
+  <button onClick={() => handleClick("e")} className="btn exit-btn">Exit</button>
+  {direction && <p className="direction-text">Direction: {direction}</p>}
+</div>
+
   );
 }
 
