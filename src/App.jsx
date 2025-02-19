@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Move from './pages/move';
-import VideoStream from './pages/VideoStream';
+import Move from './pages/move.jsx';
+import VideoStream from './pages/VideoStream.jsx';
 
 const App = () => {
  
