@@ -49,7 +49,7 @@ const VideoStream = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         const ctx = canvas.getContext("2d");
-        const socket = new WebSocket("ws://192.168.236.26:9999");
+        const socket = new WebSocket("wss://192.168.236.26:9999");
         socket.binaryType = "arraybuffer";
 
         let dataBuffer = new Uint8Array(0);
